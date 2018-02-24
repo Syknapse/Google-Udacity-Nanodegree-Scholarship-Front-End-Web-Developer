@@ -90,6 +90,17 @@ ul {
   margin-right: auto;
 }
 
+.show {
+  background-color: inherit;
+  height: 70px;
+  transform: translate(0, 0);
+  transition: height 0.2s, transform 0.6s, background-color 1.4s;
+}
+
+.header__inner button {
+  display: none;
+}
+
 .nav__list {
   width: 100%;
   padding: 0;
@@ -370,3 +381,49 @@ footer a {
   text-decoration: none;
   color: #333;
 }
+
+
+/*
+ *
+ * Media queries
+ *
+ */
+
+ @media screen and (max-width: 420px) {
+  .header__inner button {
+    display: block;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    font-size: 2em;
+    border: none;
+    background: none;
+  }
+  nav {
+    background-color: rgb(216, 174, 174);
+    height: 0;
+    transform: translate(-100%, 0);
+    transition: height 0.6s, transform 0.2s, background-color 0.9s;
+  }
+  .header__title {
+    font-size: 2.4em;
+  }
+  .header__logo {
+    margin: 5px;
+  }
+ }
+ @media screen and (min-width: 680px) {
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .hero, .top-news, .scores, .weather {
+      width: 50%;
+    }
+ }
+ @media screen and (min-width: 1200px) {
+   .header, nav, main {
+     max-width: 1200px;
+     margin: auto;
+   }
+ }
